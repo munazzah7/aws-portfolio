@@ -273,15 +273,6 @@ section p{
 
 }
 
-    section{
-        width:92%;
-    }
-
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-
 .skills-grid{
     display:flex;
     flex-wrap:wrap;
