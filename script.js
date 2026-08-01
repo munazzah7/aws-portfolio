@@ -1,43 +1,74 @@
-// ================================
+// ==========================
 // DARK MODE
-// ================================
+// ==========================
 
-const themeToggle = document.getElementById("theme-toggle");
+const themeBtn = document.getElementById("theme-toggle");
 
-themeToggle.addEventListener("click", () => {
+themeBtn.addEventListener("click", () => {
 
     document.body.classList.toggle("dark");
 
     if(document.body.classList.contains("dark")){
-        themeToggle.textContent = "☀️";
+        themeBtn.textContent="☀️";
     }
     else{
-        themeToggle.textContent = "🌙";
+        themeBtn.textContent="🌙";
     }
 
 });
 
-
-// ================================
+// ==========================
 // SCROLL ANIMATION
-// ================================
+// ==========================
 
 const sections = document.querySelectorAll("section");
 
-const observer = new IntersectionObserver((entries)=>{
+window.addEventListener("scroll", () => {
 
-    entries.forEach((entry)=>{
+    sections.forEach(section => {
 
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if(sectionTop < window.innerHeight - 100){
+            section.classList.add("show");
         }
 
     });
 
-},{
-    threshold:0.2
 });
 
-sections.forEach((section)=>{
-    observer.observe(section);
+// Show first section immediately
+
+window.dispatchEvent(new Event("scroll"));
+
+
+// ==========================
+// HAMBURGER MENU
+// ==========================
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+    if(navLinks.classList.contains("active")){
+        menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+    }else{
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+
+});
+
+document.querySelectorAll("#nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+
+    });
+
 });
