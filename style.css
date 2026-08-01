@@ -191,18 +191,53 @@ section p{
 
 /* MOBILE */
 
-
 @media (max-width:768px){
 
     nav{
+        display:flex;
         flex-direction:column;
+        align-items:center;
         gap:20px;
         padding:20px;
     }
 
     nav ul{
+        display:flex;
         flex-direction:column;
+        justify-content:center;
         align-items:center;
+        gap:15px;
+        width:100%;
+        margin:0;
+        padding:0;
+        list-style:none;
+    }
+
+    nav ul li{
+        width:100%;
+        text-align:center;
+    }
+
+    nav ul li a{
+        display:block;
+        padding:10px 0;
+    }
+
+    #theme-toggle{
+        width:45px;
+        height:45px;
+        font-size:18px;
+    }
+
+    .hero{
+        padding:80px 20px;
+        min-height:85vh;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
     }
 
     .hero h1{
@@ -215,10 +250,12 @@ section p{
 
     .hero p{
         font-size:18px;
+        width:100%;
     }
 
     .buttons{
         flex-direction:column;
+        align-items:center;
     }
 
     .btn{
@@ -235,6 +272,15 @@ section p{
     }
 
 }
+
+    section{
+        width:92%;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
 
 .skills-grid{
     display:flex;
@@ -286,11 +332,6 @@ section p{
     text-decoration:none;
     color:#2f5ee5;
     font-weight:bold;
-}
-#certificates .project-card{
-
-    border-left:6px solid #2563eb;
-
 }
 .contact-grid{
 
