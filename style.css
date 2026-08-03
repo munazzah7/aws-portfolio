@@ -25,17 +25,12 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     padding:20px 80px;
-
-    background:#ffffff;
-
+    background:#fff;
     position:sticky;
     top:0;
-
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-
     z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
 .logo{
@@ -50,6 +45,10 @@ nav ul{
     gap:35px;
 }
 
+nav ul li{
+    list-style:none;
+}
+
 nav a{
     text-decoration:none;
     color:#444;
@@ -61,7 +60,14 @@ nav a:hover{
     color:#2563eb;
 }
 
+/* Hamburger */
 
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:#2563eb;
+}
 /* DARK MODE BUTTON */
 
 #theme-toggle{
@@ -189,59 +195,72 @@ section p{
 }
 
 
-/* MOBILE */
+/* ==========================
+   MOBILE
+========================== */
 
 @media (max-width:768px){
 
     nav{
         display:flex;
-        flex-direction:column;
+        justify-content:space-between;
         align-items:center;
-        gap:20px;
-        padding:20px;
+        padding:15px 20px;
+        position:relative;
     }
 
-    nav ul{
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        gap:15px;
-        width:100%;
-        margin:0;
-        padding:0;
-        list-style:none;
+    .logo{
+        font-size:24px;
     }
 
-    nav ul li{
-        width:100%;
-        text-align:center;
-    }
-
-    nav ul li a{
+    .menu-toggle{
         display:block;
-        padding:10px 0;
+        font-size:28px;
+        cursor:pointer;
+        color:#2563eb;
+        margin-left:auto;
+        margin-right:60px;
+        z-index:1001;
     }
 
     #theme-toggle{
-        width:45px;
-        height:45px;
-        font-size:18px;
+        position:absolute;
+        top:12px;
+        right:20px;
+    }
+
+    #nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        background:#fff;
+        margin-top:20px;
+        padding:15px 0;
+        gap:15px;
+    }
+
+    #nav-links.active{
+        display:flex;
+    }
+
+    #nav-links li{
+        width:100%;
+    }
+
+    #nav-links li a{
+        display:block;
+        padding:12px;
     }
 
     .hero{
-        padding:80px 20px;
-        min-height:85vh;
-
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
+        min-height:70vh;
+        padding:60px 20px;
         text-align:center;
     }
 
     .hero h1{
-        font-size:40px;
+        font-size:38px;
     }
 
     .hero h2{
@@ -249,7 +268,7 @@ section p{
     }
 
     .hero p{
-        font-size:18px;
+        font-size:17px;
         width:100%;
     }
 
@@ -260,11 +279,20 @@ section p{
 
     .btn{
         width:220px;
-        margin:auto;
+        text-align:center;
     }
 
     section{
-        width:92%;
+        width:94%;
+        padding:25px;
+    }
+
+    .skills-grid{
+        justify-content:center;
+    }
+
+    .project-card{
+        padding:25px;
     }
 
     .contact-grid{
@@ -273,9 +301,12 @@ section p{
 
 }
 
+
+
 .skills-grid{
     display:flex;
     flex-wrap:wrap;
+    justify-content:center;
     gap:15px;
     margin-top:20px;
 }
@@ -283,10 +314,14 @@ section p{
 .skill{
     background:#eef4ff;
     color:#2f5ee5;
-    padding:12px 24px;
+    padding:12px 20px;
     border-radius:30px;
     font-weight:600;
     transition:.3s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
 }
 
 .skill i{
@@ -302,9 +337,10 @@ section p{
 }
 .project-card{
     border:1px solid #ddd;
-    padding:35px;
+    padding:30px;
     border-radius:12px;
     transition:.3s;
+    margin-bottom:30px;
 }
 
 .project-card:hover{
@@ -319,7 +355,7 @@ section p{
 
 .project-card a{
     display:inline-block;
-    margin-top:15px;
+    margin-top:20px;
     text-decoration:none;
     color:#2f5ee5;
     font-weight:bold;
@@ -333,7 +369,6 @@ section p{
     gap:25px;
 
     margin-top:30px;
-
 }
 
 .contact-card{
